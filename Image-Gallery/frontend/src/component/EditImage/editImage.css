@@ -1,0 +1,133 @@
+
+/* ImageEditor.css */
+/* Add these styles to the root html and body elements */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+  }
+  
+  /* Set height for all parent elements of image-editor-container up to body */
+  /* You may need to adjust this selector depending on your actual DOM structure */
+  #root { /* Assuming this is the ID of the main root element */
+    height: 100%;
+    width: 100%;
+  }
+/* Container for the entire ImageEditor component */
+.image-editor-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* Align items to the top of the container */
+    padding: 20px;
+    width: 100%; /* Take up the full width of the webpage */
+    height: 100%;
+    box-sizing: border-box; /* Include padding and border in the total width and height */
+    /* border: 5px solid #0056b3; */
+  }
+  
+  /* Sidebar */
+  .sidebar {
+    flex: 0 0 25%;
+    padding-right: 20px;
+    /* background-color: violet; */
+  }
+  
+  /* Sidebar content */
+  .sidebar .icon-text {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .sidebar .icon-text svg {
+    margin-right: 5px;
+  }
+  
+  /* Container for each slider in the sidebar */
+  .slider-container {
+    margin-bottom: 20px;
+  }
+  
+  /* Image Container */
+  .image-container {
+    flex: 2;
+    position: relative;
+    /* background-color: red; Add a background color for the image container */
+    border: 2px solid #ccc; /* Add a border around the image container */
+    overflow: hidden; /* Hide any overflow from overlays and frames */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+  
+  /* Style the image element inside the Cropper component */
+  .image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-color: red;
+    border: 2px solid red;
+  }
+  
+  /* Apply Overlay */
+  .overlay-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none; /* Make sure the overlay doesn't interfere with Cropper */
+  }
+  
+  /* Apply Frame */
+  .image-frame {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none; /* Make sure the frame doesn't interfere with Cropper */
+  }
+  
+  /* Style the Cropper component */
+  .image-container .reactEasyCrop_Container {
+    width: 50%;
+    height: 400px; /* Set the desired height for the cropped image */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .image-container .reactEasyCrop_CropArea {
+    border: 2px dashed #ccc; /* Customize the crop area border */
+    width: 100%;
+    height: 100%; /* Set the height of the crop area */
+  }
+  
+  .image-container .reactEasyCrop_CropArea:after {
+    content: '';
+    display: block;
+    padding-bottom: 75%; /* Set the aspect ratio (4:3) as needed */
+  }
+  
+  /* Apply Filters Button */
+  .slider-container button {
+    display: block;
+    margin-top: 10px;
+    padding: 8px 12px;
+    background-color: #007bff; /* Customize the button background color */
+    color: #fff; /* Customize the button text color */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .slider-container button:hover {
+    background-color: #0056b3; /* Customize the button background color on hover */
+  }
+  
+  /* Additional styles and adjustments can be made as per your design requirements */
+  
